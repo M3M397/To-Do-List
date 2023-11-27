@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+:root{
+  --noto : 'Noto Sans', sans-serif;
+  --font-clr : #FFF;
+  --button-clr :rgba(234,121,18,1);
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--noto);
+}
+body{
+  background: rgb(189,107,234);
+  background: -moz-linear-gradient(145deg, rgba(189,107,234,1) 1%, rgba(234,121,18,1) 49%, rgba(34,0,52,1) 100%);
+  background: -webkit-linear-gradient(145deg, rgba(189,107,234,1) 1%, rgba(234,121,18,1) 49%, rgba(34,0,52,1) 100%);
+  background: linear-gradient(145deg, rgba(189,107,234,1) 1%, rgba(234,121,18,1) 49%, rgba(34,0,52,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bd6bea",endColorstr="#220034",GradientType=1);
+}
+
+.container{
+  padding: 10px;
+  width: 100%;
+  height: 100vh;
+  }
+
+.todo-app{
+background: rgba(255, 255, 255, 0.3);
+border-radius: 24px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.4px);
+-webkit-backdrop-filter: blur(5.4px);
+width: 100%;
+max-width: 600px;
+margin:100px auto 20px;
+padding: 40px  30px 70px;
+}
+
+.todo-app h2 {
+  color: var(--font-clr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.todo-app h2 img{
+  width: 50px;
+  margin-left: 10px;
+}
+
+.task{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  margin-bottom: 25px;
+  background: var(--font-clr);
+  border-radius: 10px;
+}
+
+input{
+  flex: 1;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding:10px;
+}
+
+input::placeholder{
+  font-size: 14px;
+  color: #000;
+}
+
+
+button{
+  position: relative;
+  background-color: var(--button-clr);
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 0;
+  font-size: 16px;
+  color: white;
+  padding: 0.8em 1.8em;
+  cursor:pointer;
+  user-select:none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+}
+
+button:hover {
+  transition-duration: 0.1s;
+  background-color:  rgba(34,0,52,1);
+}
+
+button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px white;
+}
+
+button:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  left: 0;
+  top:0;
+  opacity: 1;
+  transition: 0s;
+}
+
+button:active {
+  top: 1px;
+}
+
+
+ul li{
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  cursor : pointer;
+  color: var(--font-clr);
+  font-weight: 500;
+  user-select: none;
+  position: relative;
+}
+
+ul li::before{
+  content: ' ';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(imgs/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left:8px;
+}
+
+ul li.checked{
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(imgs/checked.png);
+
+}
+
+ul li span{
+  position:absolute;
+  right: 0;
+  top:5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+ul li span:hover{
+  background: var(--font-clr);
+}
+
+footer{
+  width: 97%;
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+footer, footer a{
+  color: var(--font-clr);
+  transition: all .2s ease;
+  font-size: 1.5vw;
+}
+
+footer a:hover{
+  color: #000;
+}
